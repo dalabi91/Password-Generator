@@ -124,7 +124,7 @@ if (isNaN(length) || length < 8 || length > 128) {
 // Function for getting a random element from an array
 function getRandom(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
-  var randomElement - arr[randomIndex]
+  var randomElement = arr[randomIndex]
   return randomElement;
 
 }
