@@ -109,15 +109,17 @@ if (isNaN(length) || length < 8 || length > 128) {
 
   if (!includeUppercase && !includeLowercase && !includeNumbers && !includeSpecialChars) {
     alert("Please select at least one password criteria.");
-    return null;
+    // return null;
   }
-  return {
+  var passwordOptions = {
     length: length,
     includeUppercase: includeUppercase,
     includeLowercase: includeLowercase,
     includeNumbers: includeNumbers,
     includeSpecialChars: includeSpecialChars
 };
+
+return passwordOptions;
 }
 
 
@@ -131,8 +133,25 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  var getPasswordOptions();
+  //create empty array
+  var currentArr = newArray()
+  //conditional statement that concatenates new array
+  if(options.includeUppercase) {
+    currentArr= currentArr.concat(includeUppercase)
+  }
 
+  if(options.includeLowercase) {
+    currentArr= currentArr.concat(includeLowercase)
+  }
 
+  if(options.includeNumbers) {
+    currentArr= currentArr.concat(includeNumbers)
+  }
+
+  if(options.includeSpecialChars) {
+    currentArr= currentArr.concat(includeSpecialChars)
+  }
 }
 
 // Get references to the #generate element
