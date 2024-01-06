@@ -133,7 +133,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  var getPasswordOptions();
+  var options = getPasswordOptions();
   //create empty array
   var currentArr = newArray()
   //conditional statement that concatenates new array
@@ -152,7 +152,16 @@ function generatePassword() {
   if(options.includeSpecialChars) {
     currentArr= currentArr.concat(includeSpecialChars)
   }
-}
+
+  console.log(currentArr);
+  //generate random password
+  let finalPassword = ""
+  for (let i = 0; 1<length; i++){
+    let randomIndex =[Math.floor(Math.random() * currentArr.length)];
+      finalPassword = finalPassword + currentArr[randomIndex];
+  }
+  return finalPassword;
+  };
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
