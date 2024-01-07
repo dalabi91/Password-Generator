@@ -91,17 +91,14 @@ var upperCasedCharacters = [
 // Prompt function used to ask the user to enter the desired length of the password.
 function getPasswordOptions() {
   // parseInt is used to convert the input into an integer.
-  var length = parseInt(prompt("Choose a password length of 8-128 characters and type the digit(s) below."));
+  var length = parseInt(prompt("How many characters do you want? You can choose any number between 8 & 128"));
   
-//password length validation
+//password length validation- if nothing is typed, try again
 if (isNaN(length) || length < 8 || length > 128) {
   alert("Please enter a valid password length between 8 and 128 characters.");
   return null;
-}
-  // else {
-  //   alert("Your password will be " +  length + " characters long.")
-  // };
 
+}
   var includeUppercase = confirm("Include uppercase letters?");
   var includeLowercase = confirm("Include lowercase letters?");
   var includeNumbers = confirm("Include numbers?");
@@ -126,7 +123,7 @@ return passwordOptions;
 // Function for getting a random element from an array
 function getRandom(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
-  var randomElement = arr[randomIndex]
+  var randomElement = arr[randomIndex];
   return randomElement;
 
 }
@@ -152,11 +149,10 @@ function generatePassword() {
   if(options.includeSpecialChars) {
     currentArr= currentArr.concat(specialCharacters)
   }
-
-  console.log(currentArr);
+  // console.log(currentArr);
   //generate random password
   let finalPassword = ""
-  for (let i = 0; 1<length; i++){
+  for (let i = 0; i <options.length; i++){
     let randomIndex =[Math.floor(Math.random() * currentArr.length)];
       finalPassword = finalPassword + currentArr[randomIndex];
   }
