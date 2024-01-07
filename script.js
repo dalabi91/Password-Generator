@@ -135,22 +135,22 @@ function getRandom(arr) {
 function generatePassword() {
   var options = getPasswordOptions();
   //create empty array
-  var currentArr = newArray()
+  var currentArr = new Array()
   //conditional statement that concatenates new array
   if(options.includeUppercase) {
-    currentArr= currentArr.concat(includeUppercase)
+    currentArr= currentArr.concat(upperCasedCharacters)
   }
 
   if(options.includeLowercase) {
-    currentArr= currentArr.concat(includeLowercase)
+    currentArr= currentArr.concat(lowerCasedCharacters)
   }
 
   if(options.includeNumbers) {
-    currentArr= currentArr.concat(includeNumbers)
+    currentArr= currentArr.concat(numericCharacters)
   }
 
   if(options.includeSpecialChars) {
-    currentArr= currentArr.concat(includeSpecialChars)
+    currentArr= currentArr.concat(specialCharacters)
   }
 
   console.log(currentArr);
